@@ -7,3 +7,9 @@ jobs:
     steps:
       - name: var prints
         run: echo ${{vars.my_repo_var1}}
+  secrets:
+    runs-on: ubuntu-latest
+    needs: vars
+    steps:
+      - name: secrets prints
+        run: echo ${{secrets.my_repo_secr1}}
