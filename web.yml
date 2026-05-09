@@ -1,0 +1,40 @@
+name: Work_flow file
+on:
+  push:
+    branches:
+      - new-branch/first
+  workflow_dispatch:
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Single line run step
+        run: echo testing in step1
+
+      - name: Multi line run step
+        run: |
+          echo testing step2
+          echo testing step2 line2
+
+  second_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Second job step1
+        run: echo second job step1
+
+  third_job:
+    runs-on: ubuntu-latest
+    needs: second_job
+    steps:
+      - name: Third job step1
+        run: echo second job step1
+
+  web_job:
+    if: ${{ github.ref == 'refs/heads/new-branch/first' && github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    steps:
+     - name: code checkout
+       uses: actions/checkout@v4
+
+     - name: read file
+       run: cat .github/workflows/myweb.html
