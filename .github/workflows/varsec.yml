@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: var prints
-        run: echo {{$vars.my_repo_var1}}
+        run: echo ${{vars.my_repo_var1}}
