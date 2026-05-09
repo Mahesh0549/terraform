@@ -1,6 +1,6 @@
 name: Work_flow file
 on:
-  delete:
+  push:
     branches:
       - new-branch/first
       - main
