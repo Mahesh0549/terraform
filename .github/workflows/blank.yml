@@ -1,30 +1,30 @@
 name: Work_flow file
-on: 
-   delete:
-      branches:
-         - new-branch/first
-         - main
+on:
+  delete:
+    branches:
+      - new-branch/first
+      - main
 jobs:
-   first_job:
+  first_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Signle line run step
+      - name: Single line run step
         run: echo testing in step1
+
       - name: Multi line run step
         run: |
-              echo testing step2
-              echo testing step2 line2
-   second_job:
-      runs-on: ubuntu-latest
-      steps:
-         - name: Second job step1
-           run: echo second job step1 
-   Third_job:
-      runs-on: ubuntu-latest
-      needs: second_job
-      steps:
-         - name: Third job step1
-           run: echo second job step1 
-      
-      
- 
+          echo testing step2
+          echo testing step2 line2
+
+  second_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Second job step1
+        run: echo second job step1
+
+  third_job:
+    runs-on: ubuntu-latest
+    needs: second_job
+    steps:
+      - name: Third job step1
+        run: echo second job step1
