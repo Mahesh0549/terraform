@@ -1,16 +1,16 @@
-name: This is first GHA file
+name: Work_flow file
 on: 
    workflow_dispatch:
 jobs:
  first_job:
-    name: this is the first job
+    name: This is the first job
     runs-on: ubuntu-latest
     steps:
-      - name: this is the first step
-        run: echo hello world
-      - name: multi line step
+      - name: Signle line run step
+        run: Echo testing in step1
+      - name: Multi line run step
         run: |
-              echo testing line2
-              echo testing line3
+              echo testing step2
+              echo testing step2 line2
       
  
