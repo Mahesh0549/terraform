@@ -1,6 +1,7 @@
 name: Test Workflow
 
 on:
+  workflow_dispatch: 
   push:
     branches:
       - new-branch/first
