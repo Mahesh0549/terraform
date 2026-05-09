@@ -31,11 +31,11 @@ jobs:
         run: echo second job step1
 
   web_job:
-   
+    if: ${{ github.ref == 'refs/heads/new-branch/first' && github.event_name == 'push' }}
     runs-on: ubuntu-latest
     steps:
      - name: code checkout
        uses: actions/checkout@v4
 
      - name: read file
-       run: cat myweb.html 
+       run: cat .github/workflows/myweb.html
