@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Signle line run step
-        run: Echo testing in step1
+        run: echo testing in step1
       - name: Multi line run step
         run: |
               echo testing step2
